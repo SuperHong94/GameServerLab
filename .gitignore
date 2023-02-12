@@ -35,3 +35,13 @@ vs/
 .obj/
 .vs/
 **/.vs/
+
+*.user
+*.tlog
+*.idb
+*.ilk
+**/.tlog/
+*.recipe
+*.log
+**.log
+**.recipe
