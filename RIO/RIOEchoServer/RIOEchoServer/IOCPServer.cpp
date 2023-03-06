@@ -2,6 +2,7 @@
 #include <WS2tcpip.h>
 #include <MSWSock.h>
 #include <atomic>
+#include <mutex>
 
 
 #pragma comment(lib, "ws2_32.lib")
@@ -25,8 +26,60 @@ HANDLE g_iocp = 0;
 SOCKET g_serverSocket = 0;
 constexpr DWORD g_cqSize = 52;
 
+enum IOTYPE
+{
+	READ = 0,
+	WRITE
+};
 
-void Accept(sockaddr* addr, int *addrlen)
+class RIOBuffer :public ::_RIO_BUF
+{
+public:
+	RIOBuffer() :_RIO_BUF()
+	{
+		ZeroMemory(buf, BUFSIZE);
+	}
+
+	void Alloc()
+	{
+		if()
+	}
+private:
+	
+	char buf[BUFSIZE];
+};
+
+class RIOSocket
+{
+public:
+
+	RIOSocket() = delete;
+	RIOSocket(SOCKET sock) :_recvBuffer()
+	{
+		_rawSocket = sock;
+		_rioRQ=g_RIO_Table.RIOCreateRequestQueue(_rawSocket, 32, 1, 32, 1, g_cq, g_cq, NULL);
+	}
+	~RIOSocket();
+	void OnRecv()
+	{
+		/*g_RIO_Table.RIOReceive(_rioRQ,)*/
+	}
+	void OnSend()
+	{
+
+	}
+
+
+
+private:
+	SOCKET _rawSocket;
+	RIOBuffer _recvBuffer;
+	RIO_RQ _rioRQ;
+	std::mutex m_L;
+};
+
+
+void Accept(sockaddr* addr, int* addrlen)
 {
 	for (;;)
 	{
@@ -70,11 +123,11 @@ int main()
 	rioNotiy.Iocp.CompletionKey = reinterpret_cast<PVOID>(1);
 	rioNotiy.Iocp.Overlapped = over;
 
-	g_cq=g_RIO_Table.RIOCreateCompletionQueue(g_cqSize, &rioNotiy);
+	g_cq = g_RIO_Table.RIOCreateCompletionQueue(g_cqSize, &rioNotiy);
 	//SOCKET c_socket = WSASocket(AF_INET, SOCK_STREAM, 0, 0, 0, WSA_FLAG_OVERLAPPED);
 
 
-
+	SOCKET c_socket = accept(g_serverSocket, reinterpret_cast<sockaddr*>(&server_addr), &addrSize);
 
 
 }

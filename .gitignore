@@ -45,3 +45,4 @@ vs/
 *.log
 **.log
 **.recipe
+**.pdb
