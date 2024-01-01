@@ -1,5 +1,7 @@
 #pragma once
 
+
+//Cleanup´ã´ç
 namespace network
 {
 class NetworkInit
@@ -7,12 +9,12 @@ class NetworkInit
 public:
 	NetworkInit()
 	{
-		//WSADATA w;
-		//WSAStartup(0x202, &w);
+		WSADATA w;
+		WSAStartup(0x202, &w);
 	}
 	~NetworkInit()
 	{
-		//WSACleanup();
+		WSACleanup();
 	}
 };
 }

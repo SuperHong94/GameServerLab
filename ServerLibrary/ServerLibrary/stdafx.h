@@ -1,12 +1,12 @@
 #pragma once
 #include <memory>
-//#include <Windows.h>
-//#include <WinSock2.h>
+#include <WS2tcpip.h>
+#include <MSWSock.h>
 
 
 
-//#pragma comment(lib, "ws2_32.lib")
-//#pragma comment(lib,"mswsock.lib")
+#pragma comment(lib, "ws2_32.lib")
+#pragma comment(lib,"mswsock.lib")
 
 namespace network::config
 {
