@@ -151,18 +151,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BaseSocketFactory.h" />
     <ClInclude Include="Network\IPAddress.h" />
     <ClInclude Include="Network\NetworkInit.h" />
     <ClInclude Include="Network\Server.h" />
-    <ClInclude Include="Network\Socket.h" />
+    <ClInclude Include="Network\BaseSocket.h" />
     <ClInclude Include="Network\RIOServer.h" />
+    <ClInclude Include="Network\SocketFactory.hpp" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseSocketFactory.cpp" />
     <ClCompile Include="Network\IPAddress.cpp" />
     <ClCompile Include="Network\NetworkInit.cpp" />
     <ClCompile Include="Network\Server.cpp" />
-    <ClCompile Include="Network\Socket.cpp" />
+    <ClCompile Include="Network\BaseSocket.cpp" />
     <ClCompile Include="Network\RIOServer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>

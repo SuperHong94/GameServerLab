@@ -27,10 +27,16 @@
     <ClInclude Include="Network\IPAddress.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Network\Socket.h">
+    <ClInclude Include="Network\BaseSocket.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Network\RIOServer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\SocketFactory.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseSocketFactory.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,10 +53,13 @@
     <ClCompile Include="Network\IPAddress.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Network\Socket.cpp">
+    <ClCompile Include="Network\BaseSocket.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Network\RIOServer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseSocketFactory.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

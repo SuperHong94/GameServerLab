@@ -4,7 +4,7 @@
 namespace network
 {
 
-class RIOServer :public Server 
+class RIOServer :public Server<RIOServer>
 {
 
 public:
