@@ -1,9 +1,5 @@
-#include <iostream>
-#include <WS2tcpip.h>//2는 버전임
-
+#include "stdafx.h"
 using namespace std;
-#pragma comment(lib,"WS2_32.LIB") //표준에없기에 라이브러리도 추가해야됨
-
 const char* SERVER_IP = "127.0.0.1";
 const short SERVER_PORT = 4000;
 const int BUFSIZE = 256;
